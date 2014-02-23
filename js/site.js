@@ -10,7 +10,7 @@ $(function (){
 	var clusterGroup = new L.MarkerClusterGroup();
 
     $('.day-button').click(function(e) {  
-	$.getJSON("data/"+e.target.id+".json", function(data) {
+	$.getJSON("data/"e.target.id".json", function(data) {
 		clusterGroup.clearLayers();
 		heat.setLatLngs([]);
 		$.each(data, function (i,d){
