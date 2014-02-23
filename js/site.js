@@ -2,22 +2,22 @@ $(function (){
 
 	//Mapping
 	var map = L.mapbox.map('map', 'djohnson.map-m9l4eaq3', { zoomControl: false })
-		.setView([10.3156992, 123.88543], 14);
+		.setView([14.641192105473298, 121.04684829711913], 12);
 	map._layersMinZoom = 2
 	map._layersMaxZoom = 19
-	heat = L.heatLayer([],  {radius: 35,max: 1.0}).addTo(map);
+	var heat = L.heatLayer([],  {radius: 35,max: 1.0});
+	map.addLayer(heat);
 	var clusterGroup = new L.MarkerClusterGroup();
 
-$(document).ready(function(){
-
-    $('day-button').click(function(e) {  
-        alert(1);
-    });
-});
-	
-	$.getJSON('accidents.json', function(data) {
-	
+    $('.day-button').click(function(e) {  
+	$.getJSON(e.target.id+".json", function(data) {
+		clusterGroup.clearLayers();
+		heat.setLatLngs([]);
 		$.each(data, function (i,d){
+		debugger;
+		
+		if(d.locationLon && d.locationLat)
+		{
 			var layer = L.mapbox.featureLayer({
 				type: 'Feature',
 				geometry: {
@@ -38,7 +38,8 @@ $(document).ready(function(){
 				clusterGroup.addLayer(layer);
 			});
 			map.addLayer(clusterGroup);
-
+		}
 		});
 	});
+});
 });
