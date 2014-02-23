@@ -8,7 +8,15 @@ $(function (){
 	heat = L.heatLayer([],  {radius: 35,max: 1.0}).addTo(map);
 	var clusterGroup = new L.MarkerClusterGroup();
 
+$(document).ready(function(){
+
+    $('day-button').click(function(e) {  
+        alert(1);
+    });
+});
+	
 	$.getJSON('accidents.json', function(data) {
+	
 		$.each(data, function (i,d){
 			var layer = L.mapbox.featureLayer({
 				type: 'Feature',

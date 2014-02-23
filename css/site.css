@@ -117,3 +117,28 @@ input[type="radio"], input[type="checkbox"] {
         display: none !important;
     }
 }
+
+.day-button {
+border: 0;
+display: inline-block;
+padding: 10px 20px;
+background: #b0de5c;
+height: 20px;
+margin: 10;
+-moz-transition: background-color .25s ease-in-out;
+-webkit-transition: background-color .25s ease-in-out;
+-o-transition: background-color .25s ease-in-out;
+-ms-transition: background-color .25s ease-in-out;
+transition: background-color .25s ease-in-out;
+letter-spacing: 2px;
+text-decoration: none;
+text-transform: uppercase;
+font-size: 12px;
+font-weight: 600;
+color: #FFF;
+cursor: pointer;
+}
+
+.day-button:hover {
+background-color: #00ad87;
+}
