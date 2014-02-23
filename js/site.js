@@ -14,8 +14,6 @@ $(function (){
 		clusterGroup.clearLayers();
 		heat.setLatLngs([]);
 		$.each(data, function (i,d){
-		debugger;
-		
 		if(d.locationLon && d.locationLat)
 		{
 			var layer = L.mapbox.featureLayer({
