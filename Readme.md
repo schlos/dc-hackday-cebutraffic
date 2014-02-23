@@ -1,3 +1,1 @@
-This will be the dc-opendata cebutraffic leaflet thing...
-
-Gist Link: https://gist.githubusercontent.com/tfechner/9159860/raw/ccb3d735013798b85952f21746c47f32dbe34c1d/incident.json
+Check the gh-pages branch!
