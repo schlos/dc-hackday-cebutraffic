@@ -2,7 +2,7 @@ $(function (){
 
 	//Mapping
 	var map = L.mapbox.map('map', 'djohnson.map-m9l4eaq3', { zoomControl: false })
-		.setView([14.641192105473298, 121.04684829711913], 12);
+		.setView([14.596992, 121.014207], 12);
 	map._layersMinZoom = 2
 	map._layersMaxZoom = 19
 	var heat = L.heatLayer([],  {radius: 35,max: 1.0});
@@ -10,7 +10,18 @@ $(function (){
 	var clusterGroup = new L.MarkerClusterGroup();
 
     $('.day-button').click(function(e) {  
-	$.getJSON("data/"e.target.id".json", function(data) {
+	$.getJSON("data/"+e.target.id+".json", function(data) {
+		
+		if(e.target.id == "sundays" || e.target.id == "mondays")
+		{		
+			map.setView([14.596992, 121.014207], 12);
+			console.log("manilla zoom");
+		}
+		else if(e.target.id == "cebu-sundays" || e.target.id == "cebu-mondays") 
+		{
+			map.setView([10.309306, 123.895864], 13, "animate");
+			console.log("cebu zoom");
+		}
 		clusterGroup.clearLayers();
 		heat.setLatLngs([]);
 		$.each(data, function (i,d){
